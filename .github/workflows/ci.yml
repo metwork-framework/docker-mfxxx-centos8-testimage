@@ -15,6 +15,7 @@ env:
     WORKFLOW_SCRIPTS_DIR: .github/workflows
     DOCKER_WORKFLOW_SCRIPTS_DIR: /src/.github/workflows
     PAYLOAD_BRANCH: ${{ github.event.client_payload.branch}}
+    PAYLOAD_OS: ${{ github.event.client_payload.os}}
 
 jobs:
   ci_build:
@@ -44,6 +45,7 @@ jobs:
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           ${WORKFLOW_SCRIPTS_DIR}/docker_build.sh
+
 
 
 
