@@ -25,4 +25,4 @@ FROM centos:centos8
 ARG BRANCH
 COPY --from=yum_cache /etc/yum.repos.d/metwork.repo /etc/yum.repos.d/
 COPY --from=yum_cache /tmp/yum_cache .
-RUN yum clean all && yum -y install metwork-mfext-minimal gcc diffutils initscripts
+RUN yum clean all && yum -y install metwork-mfext-minimal gcc diffutils initscripts file
