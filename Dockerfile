@@ -6,7 +6,7 @@
 
 
 ARG BRANCH=master
-FROM rockylinux:8 as yum_cache
+FROM rockylinux/rockylinux:8 as yum_cache
 
 ARG BRANCH
 RUN echo -e "[metwork_${BRANCH}]\n\
